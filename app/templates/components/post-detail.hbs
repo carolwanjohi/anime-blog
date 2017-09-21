@@ -1,0 +1,17 @@
+{{!-- Display the actual post content --}}
+{{post.content}}
+
+{{!-- Delete Post Button --}}
+<p>
+    <button class="btn btn-danger" {{action 'delete' post}}>Delete Post</button>
+</p>
+
+<hr>
+
+<h2>Comments about {{post.title}}</h2>
+
+<ul>
+    {{#each post.comments as |comment|}}
+        {{comment-tile comment=comment}}
+    {{/each}}
+</ul>

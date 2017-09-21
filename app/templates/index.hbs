@@ -1,9 +1,22 @@
 <h2>Welcome to Anime blog here are the available blogs</h2>
 
 <ul>
-    {{#each model as |post|}}
-        {{post-tile post=post destroyPost="destroyPost" update="update"}}
+    {{#each model.posts as |post|}}
+        {{post-tile post=post}}
     {{/each}}
 </ul>
 
+<hr>
+
 {{new-post savePost="savePost"}}
+
+<hr>
+
+<h2>All Comments</h2>
+
+<ul class="list-unstyled">
+    {{#each model.comments as |comment|}}
+        <li>{{comment.review}} - by {{comment.name}}</li>
+    {{/each}}
+</ul>
+

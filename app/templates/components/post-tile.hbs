@@ -1,9 +1,7 @@
 <li>
     {{!-- Display list of blog post and the author --}}
-    {{post.title}} by {{post.author}}
-
-    {{!-- Delete Post Button --}}
-    <button class="btn btn-danger" {{action 'delete' post}}>Delete Post</button>
+    {{#link-to 'post' post.id}}
+        {{post.title}} by {{post.author}}
+    {{/link-to}}
 </li>
 
-{{update-post post=post update="update"}}
