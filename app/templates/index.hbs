@@ -1,0 +1,6 @@
+<h2>Welcome to Anime blog here are the available blogs</h2>
+<ul>
+    {{#each model as |post|}}
+        {{post-tile post=post destroyPost="destroyPost"}}
+    {{/each}}
+</ul>

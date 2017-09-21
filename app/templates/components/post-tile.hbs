@@ -1,0 +1,7 @@
+<li>
+    {{!-- Display list of blog post and the author --}}
+    {{post.title}} by {{post.author}}
+
+    {{!-- Delete Post Button --}}
+    <button class="btn btn-danger" {{action 'delete' post}}>Delete Post</button>
+</li>

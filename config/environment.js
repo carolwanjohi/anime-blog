@@ -18,6 +18,15 @@ module.exports = function(environment) {
       }
     },
 
+    firebase: {
+      apiKey: "AIzaSyBuY_uQugDOIb-OyYn8bfA6OfyaHFmkc4Y",
+      authDomain: "anime-blog.firebaseapp.com",
+      databaseURL: "https://anime-blog.firebaseio.com",
+      projectId: "anime-blog",
+      storageBucket: "anime-blog.appspot.com",
+      messagingSenderId: "71632732661"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
