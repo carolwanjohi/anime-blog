@@ -1,0 +1,33 @@
+{{#if addNewPost}}
+    <h2>Create a Blog Post</h2>
+
+    <div>
+
+        <form>
+            
+            <div class="form-group">
+                <label for="title">Title:</label>
+                {{input class="form-control" value=title id="title"}}
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author:</label>
+                {{input class="form-control" value=author id="author"}}
+            </div>
+
+            <div class="form-group">
+                <label for="content">Post:</label>
+                {{textarea class="form-control" value=content id="content"}}
+            </div>
+
+            <button class="btn btn-success" {{action 'savePost'}}>Create A Blog Post</button>
+
+        </form>
+
+    </div>
+
+{{else}}
+
+    <button class="btn btn-success" {{action 'postFormShow'}}>New Post</button>
+
+{{/if}}
