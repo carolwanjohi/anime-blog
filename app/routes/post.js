@@ -6,9 +6,14 @@ export default Ember.Route.extend({
     },
 
     actions: {   
-        // Delete an existing Post
+        // Delete an existing Post and its comments
         destroyPost(post) {
-            post.destroyRecord();
+            var comment_deletions = post.get('comments').map(function (post){
+                return post.destroyRecord();
+            });
+            Ember.RSVP.all(comment_deletions).then( function() {
+                return post.destroyRecord();
+            });
             this.transitionTo('index');
         },
         
@@ -25,6 +30,7 @@ export default Ember.Route.extend({
 
         // Create a comment
         saveComment(params) {
+            debugger;
             var newComment = this.store.createRecord('comment', params);
             var post = params.post;
             post.get('comments').addObject(newComment);
@@ -33,5 +39,12 @@ export default Ember.Route.extend({
             });
             this.transitionTo('post', post);
         },
+
+        // Delete a comment
+        destroyComment(comment) {
+            comment.destroyRecord();
+            this.transitionTo('index');
+        }
+
     }
 });

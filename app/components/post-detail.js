@@ -8,5 +8,10 @@ export default Ember.Component.extend({
                 this.sendAction('destroyPost', post);
             }
         },
+
+        // Delete a comment
+        destroyComment(comment) {
+            this.sendAction('destroyComment', comment);
+        }
     }
 });

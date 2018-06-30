@@ -1,6 +1,6 @@
 <h2>{{model.title}} by {{model.author}}</h2>
 
-{{post-detail post=model destroyPost="destroyPost"}}
+{{post-detail post=model destroyPost="destroyPost" destroyComment="destroyComment"}}
 
 {{new-comment  post=model saveComment="saveComment"}}
 
